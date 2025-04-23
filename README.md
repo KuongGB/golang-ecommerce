@@ -1,11 +1,12 @@
 ##Ecommerce With Golang Project
-
+```bash
 # You can start the project with below commands
 docker-compose up -d
 go run main.go
+```
 SIGNUP API CALL (POST REQUEST)
 http://localhost:8080/users/signup
-
+```json
 {
   "first_name": "User",
   "last_name": "Master",
@@ -13,18 +14,20 @@ http://localhost:8080/users/signup
   "password": "111111",
   "phone": "+123456789"
 }
+```
 Response :"Successfully Signed Up!!"
 
 LOGIN API CALL (POST REQUEST)
 
 http://localhost:8080/users/login
-
+```json
 {
   "email": "user@gmail.com",
   "password": "12345"
 }
+```
 response will be like this
-
+```json
 {
   "_id": "***********************",
   "first_name": "User",
@@ -41,16 +44,18 @@ response will be like this
   "address": [],
   "orders": []
 }
+```
 Admin add Product API (POST REQUEST)
 
 http://localhost:8080/admin/addproduct
-
+```json
 {
   "product_name": "lenovo P50",
   "price": 1500,
   "rating": 10,
   "image": "lenovo.jpg"
 }
+```
 Response : "Successfully added our Product Admin!!"
 
 View all the Products API (GET REQUEST)
@@ -58,7 +63,7 @@ View all the Products API (GET REQUEST)
 http://localhost:8000/users/productview
 
 Response
-
+```json
 [
   {
     "Product_ID": "67fe015f65c0061877c384ef",
@@ -82,11 +87,12 @@ Response
     "image": "ipho.jpg"
   }
 ]
+```
 Search Product by regex API (GET REQUEST)
 defines the word search sorting http://localhost:8080/users/search?name=en
 
 response:
-
+```json
 [
   {
     "Product_ID": "67fe015f65c0061877c384ef",
@@ -103,6 +109,7 @@ response:
     "image": "lenovo1.jpg"
   }
 ]
+```
 Adding the Products to the Cart API (GET REQUEST)
 
 http://localhost:8080/addtocart?id=xxxproduct_idxxx&userID=xxxxxxuser_idxxxxxx
@@ -122,13 +129,14 @@ Addding the Address API (POST REQUEST)
 http://localhost:8080/addadress?id=user_id**\*\***\***\*\***
 
 The Address array is limited to two values home and work address more than two address is not acceptable
-
+```json
 {
   "house_name": "white house",
   "street_name": "white street",
   "city_name": "washington",
   "pin_code": "332423432"
 }
+```
 Editing the Home Address API (PUT REQUEST)
 
 http://localhost:8080/edithomeaddress?id=xxxxxxxxxxuser_idxxxxxxxxxxxxxxx
